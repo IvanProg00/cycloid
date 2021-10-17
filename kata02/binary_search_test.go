@@ -63,7 +63,7 @@ var tests = []struct {
 	}, {
 		num:      -2,
 		arr:      []int{-43, -66, -2, -52},
-		expected: 2,
+		expected: 1,
 	},
 }
 
