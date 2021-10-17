@@ -18,7 +18,7 @@ var tests = []struct {
 		expected: 1,
 	}, {
 		num:      59,
-		arr:      []int{-53, 0, -59, 53},
+		arr:      []int{-53, -59, 0, 53},
 		expected: -1,
 	}, {
 		num:      39,
@@ -34,35 +34,35 @@ var tests = []struct {
 		expected: 0,
 	}, {
 		num:      0,
-		arr:      []int{3, 0},
-		expected: 1,
+		arr:      []int{0, 3},
+		expected: 0,
 	}, {
 		num:      5,
 		arr:      []int{-3, 0, 5},
 		expected: 2,
 	}, {
 		num:      18,
-		arr:      []int{9, 3, 0},
+		arr:      []int{3, 0, 9},
 		expected: -1,
 	}, {
 		num:      11,
-		arr:      []int{11, 3, 0},
+		arr:      []int{11, 33, 100},
 		expected: 0,
 	}, {
 		num:      43,
-		arr:      []int{43, 66, 12, 65},
+		arr:      []int{43, 66, 122, 655},
 		expected: 0,
 	}, {
 		num:      -52,
-		arr:      []int{43, 66, 12, 65},
+		arr:      []int{43, 66, 122, 675},
 		expected: -1,
 	}, {
-		num:      -52,
-		arr:      []int{-43, -66, -12, -52},
+		num:      -2,
+		arr:      []int{-66, -43, -12, -2},
 		expected: 3,
 	}, {
 		num:      -2,
-		arr:      []int{-43, -66, -2, -52},
+		arr:      []int{-143, -66, -2, 52},
 		expected: 2,
 	},
 }
@@ -72,6 +72,15 @@ func TestIterativeSearch(t *testing.T) {
 
 	for _, test := range tests {
 		v := kata02.IterativeSearch(test.num, test.arr)
+		require.Equal(test.expected, v)
+	}
+}
+
+func TestRecursiveSearch(t *testing.T) {
+	require := require.New(t)
+
+	for _, test := range tests {
+		v := kata02.RecursiveSearch(test.num, test.arr)
 		require.Equal(test.expected, v)
 	}
 }
