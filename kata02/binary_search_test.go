@@ -64,6 +64,30 @@ var tests = []struct {
 		num:      -2,
 		arr:      []int{-143, -66, -2, 52},
 		expected: 2,
+	}, {
+		num:      50,
+		arr:      []int{50, 84, 90, 92, 43},
+		expected: 0,
+	}, {
+		num:      84,
+		arr:      []int{50, 84, 90, 92, 43},
+		expected: 1,
+	}, {
+		num:      -1,
+		arr:      []int{-5, -3, -1, 0, 6},
+		expected: 2,
+	}, {
+		num:      92,
+		arr:      []int{50, 84, 90, 92, 124},
+		expected: 3,
+	}, {
+		num:      124,
+		arr:      []int{50, 84, 90, 92, 124},
+		expected: 4,
+	}, {
+		num:      50,
+		arr:      []int{10, 48, 51, 64, 78},
+		expected: -1,
 	},
 }
 
